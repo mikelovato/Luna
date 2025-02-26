@@ -9,6 +9,7 @@ from llama_index.core.indices.knowledge_graph import KnowledgeGraphIndex
 from llama_index.core import StorageContext, Settings
 
 import time
+import os
 time.sleep(18)
 # 1. 连接 Neo4j
 neo4j_graph_store = Neo4jGraphStore(
@@ -17,13 +18,17 @@ neo4j_graph_store = Neo4jGraphStore(
     url="bolt://neo4j:7687",
 )
 
+my_api_key = os.getenv("OPENAI_API_KEY")
+if not my_api_key:
+    raise ValueError("API key for OpenAI is not set in the environment variables.")
+
 
 
 # 2. 创建 StorageContext
 storage_context = StorageContext.from_defaults(graph_store=neo4j_graph_store)
 
 # 3. 配置 LLM（这里可以换成本地模型）
-llm = OpenAI(model="gpt-4o-mini",api_key="xxx")  # 这里可以替换为本地模型
+llm = OpenAI(model="gpt-4o-mini",api_key=my_api_key)  # 这里可以替换为本地模型
 
 # service_context = ServiceContext.from_defaults(llm=llm)
 Settings.llm = llm
