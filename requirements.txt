@@ -1,0 +1,8 @@
+requests
+openai
+neo4j
+llama-index
+llama-index-core
+llama-index-llms-openai
+llama-index-graph-stores-neo4j
+llama-index-embeddings-openai
