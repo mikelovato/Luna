@@ -1,20 +1,12 @@
 ## Overview
-This project builds a knowledge graph using Google Scholar profile of NUS SOC professors. 
-![Overview](data/kg.png)
-
-## outcome
-![outcome](data/cp.png)
+This project builds a graphrag project with llama_index and Neo4j
 
 [Neo4J Address](127.0.0.1:7474)
 
-## Test Example
+## Reference
+* [Neo4jKGIndexDemo.ipynb](https://github.com/run-llama/llama_index/blob/ebc728c6e9d7480965ce37c8641405e19075aa24/docs/docs/examples/index_structs/knowledge_graph/Neo4jKGIndexDemo.ipynb)
+* [ducuments Demo](https://github.com/run-llama/llama_index/blob/ebc728c6e9d7480965ce37c8641405e19075aa24/docs/docs/examples/vector_stores/VespaIndexDemo.ipynb#L114)
 
-```sh
-curl -X POST -H "Content-Type: application/json" -d '{"prompt": " How could they cooperate for Yao Lu and Warut SUKSOMPONG" }' 127.0.0.1:8000/gpt
-
-## clear database in Neo4j
-MATCH (n) DETACH DELETE n;
-```
 
 ## Prerequisites
 - Docker
