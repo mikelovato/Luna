@@ -10,12 +10,12 @@ from llama_index.core import StorageContext, Settings
 
 import time
 import os
-time.sleep(18)
+time.sleep(18) # wait for the neo4j to start
 # 1. 连接 Neo4j
 neo4j_graph_store = Neo4jGraphStore(
     username="neo4j",
     password="password",
-    url="bolt://neo4j:7687",
+    url="bolt://neo4j_luna:7687",
 )
 
 my_api_key = os.getenv("OPENAI_API_KEY")
